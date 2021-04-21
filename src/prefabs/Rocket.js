@@ -1,7 +1,5 @@
 class Rocket extends Phaser.GameObjects.Sprite {
-
     constructor(scene, x, y, texture, frame, ship, ammoCount) {
-
         super(scene, x, y, texture, frame);
         scene.add.existing(this);
         this.movementSpeed = 3.5;
@@ -12,7 +10,6 @@ class Rocket extends Phaser.GameObjects.Sprite {
         this.shipX = this.x;
         this.alpha = 0;
         this.ammo = ammoCount;
-
     }
 
     update() {
@@ -54,9 +51,9 @@ class Rocket extends Phaser.GameObjects.Sprite {
         this.isFiring = false;
         if (p1Rocket.ammo < 1) {
             gameOver = true;
-            torpedoFailText1.text = 'Out of Fireballs, The Slimes Invaded'
-            torpedoFailText2.text = 'Press R To Restart'
-            torpedoFailText3.text = 'Press ESC To Return To Menu'
+            failText1.text = 'Out of Fireballs, The Slimes Invaded'
+            failText2.text = 'Press R To Restart'
+            failText3.text = 'Press ESC To Return To Menu'
             gameOver = true;
             if (p1Score > highScore) {
                 highScore = p1Score;
