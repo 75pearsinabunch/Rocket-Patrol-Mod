@@ -55,43 +55,36 @@ class Menu extends Phaser.Scene {
 
         };
 
-        this.add.text(game.config.width / 2, game.config.height / 2 + 52, 'PRESS SPACE TO CONTINUE!', menuConfig).setOrigin(0.5);
-        menuConfig.color = '#FFFFFF';
+        this.add.text(game.config.width / 2, 360, 'Press ENTER To Continue', menuConfig).setOrigin(0.5);
 
         menuConfig.fontSize = '22px';
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding + 100, 'DIFFICULTY:', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, 390, 'Difficulty:', menuConfig).setOrigin(0.5);
         
         // toggleable difficulty UI
 
         this.difficulty = true;
-        
-        menuConfig.color = '#FFFFFF'
 
         menuConfig.fontSize = 28;
-        this.difficultySettingEasy = this.add.text(game.config.width / 2 - 45, game.config.height / 2 + borderUISize + borderPadding + 127, 'EASY', menuConfig).setOrigin(0.5);
-        menuConfig.color = '#FFFFFF'
+        this.difficultySettingEasy = this.add.text(game.config.width / 2 - 45, 420, 'EASY', menuConfig).setOrigin(0.5);
   
-        this.difficultySettingHard = this.add.text(game.config.width / 2 + 45, game.config.height / 2 + borderUISize + borderPadding + 127, 'hard', menuConfig).setOrigin(0.5);
-
-        menuConfig.color = '#FFFFFF'
+        this.difficultySettingHard = this.add.text(game.config.width / 2 + 45, 420, 'hard', menuConfig).setOrigin(0.5);
 
         menuConfig.fontSize = 15;
-        this.add.text(game.config.width / 2, game.config.height / 2 + borderUISize + borderPadding + 155, 'HIT F TO TOGGLE', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width / 2, 450, 'Press F To Toggle', menuConfig).setOrigin(0.5);
 
         // high score
 
         menuConfig.fontSize = '16px';
-        menuConfig.color = '#FFFFFF'
-
+ 
         this.add.text(65, 35, 'HI-SCORE:', menuConfig).setOrigin(0.5);
         menuConfig.fontSize = '36px';
-        this.highScoreText = this.add.text(65, 65, highScore, menuConfig).setOrigin(0.5);
+        this.highScoreText = this.add.text(125, 35, highScore, menuConfig).setOrigin(0.5);
 
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
 
         game.settings = {
 
@@ -121,12 +114,6 @@ class Menu extends Phaser.Scene {
 
             };
 
-            // change visuals
-
-            this.difficultySettingEasy.style.color = '#FFFFFF';
-
-            this.difficultySettingHard.style.color = '#FFFFFF';
-
             this.difficultySettingHard.text = "hard";
             this.difficultySettingEasy.text = "EASY";
             this.difficulty = !this.difficulty;
@@ -140,12 +127,6 @@ class Menu extends Phaser.Scene {
               ammoCount: 10   
 
             };
-
-            // change visuals
-            
-            this.difficultySettingHard.style.color = '#FFFFFF';
-            
-            this.difficultySettingEasy.style.color = '#FFFFFF';
 
             this.difficultySettingHard.text = "HARD";
             this.difficultySettingEasy.text = "easy";

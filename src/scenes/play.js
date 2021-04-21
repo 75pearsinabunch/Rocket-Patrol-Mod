@@ -77,9 +77,9 @@ class Play extends Phaser.Scene {
 
         }
 
-        this.scoreText = this.add.text(borderUISize + borderPadding + 27, borderUISize + borderPadding * 2 + 17,"score:", this.statusConfig);
-        this.ammoText = this.add.text(borderUISize + borderPadding + 429, borderUISize + borderPadding * 2 + 17, "fireballs:", this.statusConfig);
-        this.timeText = this.add.text(borderUISize + borderPadding + 230, borderUISize + borderPadding * 2 + 17, "time:", this.statusConfig);
+        this.scoreText = this.add.text(borderUISize + borderPadding + 8, borderUISize + borderPadding * 2 + 17,"score:", this.statusConfig);
+        this.ammoText = this.add.text(borderUISize + borderPadding + 408, borderUISize + borderPadding * 2 + 17, "fireballs:", this.statusConfig);
+        this.timeText = this.add.text(borderUISize + borderPadding + 205, borderUISize + borderPadding * 2 + 17, "time:", this.statusConfig);
 
         this.statusConfig.color = '000000'
 
@@ -115,7 +115,7 @@ class Play extends Phaser.Scene {
                     this.statusConfig.color = "000000";
 
                     this.statusConfig.fontSize = '26px'
-                    this.add.text(game.config.width/2, 205, 'Too Many Slimes Invaded the Kingdom', this.statusConfig).setOrigin(0.5);
+                    this.add.text(game.config.width/2, 205, 'The Slimes Invaded the Kingdom', this.statusConfig).setOrigin(0.5);
                     this.statusConfig.color = "000000";
 
                     this.statusConfig.fontSize = '20px'
@@ -233,7 +233,7 @@ class Play extends Phaser.Scene {
 
         if (p1Rocket.ammo < 1) {
             gameOver = true;
-            torpedoFailText1.text = 'Ran Out of Fireballs, The Slimes Invaded'
+            torpedoFailText1.text = 'No More Fireballs, The Slimes Invaded'
             torpedoFailText2.text = 'Press R To Restart'
             torpedoFailText3.text = 'Press ESC To Retrun To Menu'
             gameOver = true;
