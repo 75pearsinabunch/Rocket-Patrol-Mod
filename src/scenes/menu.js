@@ -34,23 +34,16 @@ class Menu extends Phaser.Scene {
 
         }
 
+        // homescreen
+        this.add.image(0, 0, 'splash').setOrigin(0, 0);
+
         // NEW UI
 
         let menuConfig = {
 
-          fontFamily: 'pixelfont7',
           fontSize: '30px',
-          color: '#F5F5DC',
+          color: '#FFFFFF',
           align: 'left',
-          shadow: {
-
-            offsetX: 0,
-            offsetY: 0,
-            color: '#F5F5DC',
-            stroke: 20,
-            fill: '#F5F5DC'
-
-          },
 
           padding: {
 
@@ -63,16 +56,8 @@ class Menu extends Phaser.Scene {
         };
 
         this.add.text(game.config.width / 2, game.config.height / 2 + 52, 'PRESS SPACE TO CONTINUE!', menuConfig).setOrigin(0.5);
-        menuConfig.color = '#88D4FF';
-        menuConfig.shadow = {
+        menuConfig.color = '#FFFFFF';
 
-          offsetX: 0,
-          offsetY: 0,
-          color: '#88D4FF',
-          stroke: 20,
-          fill: '#88D4FF'
-
-        };
         menuConfig.fontSize = '22px';
         this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding + 100, 'DIFFICULTY:', menuConfig).setOrigin(0.5);
         
@@ -80,53 +65,23 @@ class Menu extends Phaser.Scene {
 
         this.difficulty = true;
         
-        menuConfig.color = '#88ED52'
-        menuConfig.shadow = {
+        menuConfig.color = '#FFFFFF'
 
-          offsetX: 0,
-          offsetY: 0,
-          color: '#303030',
-          stroke: 20,
-          fill: '#303030'
-
-        };
         menuConfig.fontSize = 28;
         this.difficultySettingEasy = this.add.text(game.config.width / 2 - 45, game.config.height / 2 + borderUISize + borderPadding + 127, 'EASY', menuConfig).setOrigin(0.5);
-        menuConfig.color = '#335060'
+        menuConfig.color = '#FFFFFF'
   
         this.difficultySettingHard = this.add.text(game.config.width / 2 + 45, game.config.height / 2 + borderUISize + borderPadding + 127, 'hard', menuConfig).setOrigin(0.5);
 
-        menuConfig.color = '#88D4FF'
-        menuConfig.shadow = {
-
-          offsetX: 0,
-          offsetY: 0,
-          color: '#88D4FF',
-          stroke: 20,
-          fill: '#88D4FF'
-
-        };
+        menuConfig.color = '#FFFFFF'
 
         menuConfig.fontSize = 15;
         this.add.text(game.config.width / 2, game.config.height / 2 + borderUISize + borderPadding + 155, 'HIT F TO TOGGLE', menuConfig).setOrigin(0.5);
 
-        // homescreen
-
-        //this.add.image(0, -10, 'splash').setOrigin(0, 0);
-
         // high score
 
         menuConfig.fontSize = '16px';
-        menuConfig.color = '#FF4540'
-        menuConfig.shadow = {
-
-          offsetX: 0,
-          offsetY: 0,
-          color: '#FF4540',
-          stroke: 20,
-          fill: '#FF4540'
-
-        };
+        menuConfig.color = '#FFFFFF'
 
         this.add.text(65, 35, 'HI-SCORE:', menuConfig).setOrigin(0.5);
         menuConfig.fontSize = '36px';
@@ -142,7 +97,7 @@ class Menu extends Phaser.Scene {
 
           spaceshipSpeed: 2,
           gameTimer: 60000,
-          ammoCount: 20  
+          ammoCount: 2  
 
         }
 
@@ -162,33 +117,15 @@ class Menu extends Phaser.Scene {
 
               spaceshipSpeed: 2.5,
               gameTimer: 60000,
-              ammoCount: 20 
+              ammoCount: 2 
 
             };
 
             // change visuals
 
-            this.difficultySettingEasy.style.color = '#88ED52';
-            this.difficultySettingEasy.style.shadow = {
+            this.difficultySettingEasy.style.color = '#FFFFFF';
 
-              offsetX: 0,
-              offsetY: 0,
-              color: '#88ED52',
-              stroke: 20,
-              fill: '#88ED52'
-    
-            };
-
-            this.difficultySettingHard.style.color = '#335060';
-            this.difficultySettingHard.style.shadow = {
-
-              offsetX: 0,
-              offsetY: 0,
-              color: '#335060',
-              stroke: 20,
-              fill: '#335060'
-    
-            };
+            this.difficultySettingHard.style.color = '#FFFFFF';
 
             this.difficultySettingHard.text = "hard";
             this.difficultySettingEasy.text = "EASY";
@@ -206,42 +143,18 @@ class Menu extends Phaser.Scene {
 
             // change visuals
             
-            this.difficultySettingHard.style.color = '#EB596D';
-            this.difficultySettingHard.style.shadow = {
-
-              offsetX: 0,
-              offsetY: 0,
-              color: '#EB596D',
-              stroke: 20,
-              fill: '#EB596D'
-    
-            };
+            this.difficultySettingHard.style.color = '#FFFFFF';
             
-            this.difficultySettingEasy.style.color = '#335060';
-            this.difficultySettingEasy.style.shadow = {
-
-              offsetX: 0,
-              offsetY: 0,
-              color: '#335060',
-              stroke: 20,
-              fill: '#335060'
-    
-            };
+            this.difficultySettingEasy.style.color = '#FFFFFF';
 
             this.difficultySettingHard.text = "HARD";
             this.difficultySettingEasy.text = "easy";
             this.difficulty = !this.difficulty;
-
           }
-
         }
-
         this.highScoreText.text = highScore;
-
         // game start logic
-        
         if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
-
           this.sound.play('sfx_select');
           this.scene.start("playScene");  
 

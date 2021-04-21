@@ -64,17 +64,9 @@ class Play extends Phaser.Scene {
 
         this.statusConfig = {
 
-            fontFamily: 'pixelfont7',
             fontSize: '28px',
             color: '000000',
             align: 'left',
-
-            shadow: {
-
-                color: '#000000',
-                stroke: 20,
-            
-            },
 
             padding: {
               top: 5,
@@ -90,12 +82,7 @@ class Play extends Phaser.Scene {
         this.timeText = this.add.text(borderUISize + borderPadding + 230, borderUISize + borderPadding * 2 + 17, "time:", this.statusConfig);
 
         this.statusConfig.color = '000000'
-        this.statusConfig.shadow = {
 
-            color: '000000',
-            stroke: 20,
-  
-        };
         this.scoreLeft = this.add.text(borderUISize + borderPadding + 110, borderUISize + borderPadding * 2 + 17, p1Score, this.statusConfig);
         this.ammoRight = this.add.text(borderUISize + borderPadding + 575, borderUISize + borderPadding * 2 + 17, p1Rocket.ammo, this.statusConfig);
         this.timeCenter = this.add.text(borderUISize + borderPadding + 290, borderUISize + borderPadding * 2 + 17, this.timeLeft, this.statusConfig);
@@ -115,41 +102,22 @@ class Play extends Phaser.Scene {
 
                     this.statusConfig.fontSize = '32px'
                     this.statusConfig.color = "000000";
-                    this.statusConfig.shadow = {
 
-                        color: '000000',
-                        stroke: 20,
-              
-                    };
-                    this.add.text(game.config.width/2, game.config.height/2, 'You Saved the Kingdom', this.statusConfig).setOrigin(0.5);
+                    this.add.text(game.config.width/2, 205, 'You Saved the Kingdom', this.statusConfig).setOrigin(0.5);
                     this.statusConfig.fontSize = '20px'
                     this.statusConfig.color = "000000";
-                    this.statusConfig.shadow = {
 
-                        color: '000000',
-                        stroke: 20,
-              
-                    };
-                    this.add.text(game.config.width/2, game.config.height/2 + 30, 'PRESS R TO RESTART', this.statusConfig).setOrigin(0.5);
-                    this.add.text(game.config.width/2, game.config.height/2 + 60, 'PRESS ESC TO RETURN TO MENU', this.statusConfig).setOrigin(0.5);
+                    this.add.text(game.config.width/2, game.config.height/2 + 30, 'Press R To Restart', this.statusConfig).setOrigin(0.5);
+                    this.add.text(game.config.width/2, game.config.height/2 + 60, 'Press ESC TO Return To Menu', this.statusConfig).setOrigin(0.5);
 
                 } else if (p1Score <= 200) {
 
-                    this.statusConfig.color = "#EA8175";
-                    this.statusConfig.shadow = {
-                        color: '000000',
-                        stroke: 20,
-              
-                    };
-                    this.statusConfig.fontSize = '26px'
-                    this.add.text(game.config.width/2, game.config.height/2, 'Too Many Slimes Invaded the Kingdom', this.statusConfig).setOrigin(0.5);
                     this.statusConfig.color = "000000";
-                    this.statusConfig.shadow = {
 
-                        color: '000000',
-                        stroke: 20,
-              
-                    };
+                    this.statusConfig.fontSize = '26px'
+                    this.add.text(game.config.width/2, 205, 'Too Many Slimes Invaded the Kingdom', this.statusConfig).setOrigin(0.5);
+                    this.statusConfig.color = "000000";
+
                     this.statusConfig.fontSize = '20px'
                     this.add.text(game.config.width/2, game.config.height/2 + 30, 'PRESS R TO RESTART', this.statusConfig).setOrigin(0.5);
                     this.add.text(game.config.width/2, game.config.height/2 + 60, 'PRESS ESC TO RETURN TO MENU', this.statusConfig).setOrigin(0.5);
@@ -170,21 +138,11 @@ class Play extends Phaser.Scene {
 
         this.statusConfig.fontSize = '26px'
         this.statusConfig.color = "0000";
-                    this.statusConfig.shadow = {
 
-                        color: '000000',
-                        stroke: 20,
-              
-                    };
         torpedoFailText1 = this.add.text(game.config.width / 2, game.config.height/2, '', this.statusConfig).setOrigin(0.5);
         this.statusConfig.fontSize = '20px'
         this.statusConfig.color = "000000";
-                    this.statusConfig.shadow = {
 
-                        color: '000000',
-                        stroke: 20,
-              
-                    };
         torpedoFailText2 = this.add.text(game.config.width / 2, game.config.height/2 + 30, '', this.statusConfig).setOrigin(0.5);
         torpedoFailText3 = this.add.text(game.config.width/2, game.config.height/2 + 60, '', this.statusConfig).setOrigin(0.5);
         
@@ -275,9 +233,9 @@ class Play extends Phaser.Scene {
 
         if (p1Rocket.ammo < 1) {
             gameOver = true;
-            torpedoFailText1.text = 'TORPEDOES EXPENDED, MISSION FAILED'
-            torpedoFailText2.text = 'PRESS R TO RESTART'
-            torpedoFailText3.text = 'PRESS ESC TO RETURN TO MENU'
+            torpedoFailText1.text = 'Ran Out of Fireballs, The Slimes Invaded'
+            torpedoFailText2.text = 'Press R To Restart'
+            torpedoFailText3.text = 'Press ESC To Retrun To Menu'
             gameOver = true;
 
             if (p1Score > highScore) {

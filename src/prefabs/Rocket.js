@@ -54,9 +54,9 @@ class Rocket extends Phaser.GameObjects.Sprite {
         this.isFiring = false;
         if (p1Rocket.ammo < 1) {
             gameOver = true;
-            torpedoFailText1.text = 'TORPEDOES EXPENDED, MISSION FAILED'
-            torpedoFailText2.text = 'PRESS R TO RESTART'
-            torpedoFailText3.text = 'PRESS ESC TO RETURN TO MENU'
+            torpedoFailText1.text = 'Ran Out of Fireballs, The Slimes Invaded'
+            torpedoFailText2.text = 'Press R To Restart'
+            torpedoFailText3.text = 'Press ESC To Return To Menu'
             gameOver = true;
             if (p1Score > highScore) {
                 highScore = p1Score;
