@@ -4,12 +4,12 @@ class Menu extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('splash', './assets_custom/homescreen.png');
-        this.load.audio('sfx_select', './assets_custom/select.wav');
-        this.load.audio('toggle', './assets_custom/toggle.wav');
-        this.load.audio('sfx_explosion', './assets_custom/explosion.wav');
-        this.load.audio('sfx_torpedo', './assets_custom/fire.wav');
-        this.load.audio('theme', './assets_custom/spacetheme.mp3');
+        this.load.image('splash', './assets/homescreen.png');
+        this.load.audio('sfx_select', './assets/select.wav');
+        this.load.audio('toggle', './assets/toggle.wav');
+        this.load.audio('sfx_explosion', './assets/explosion.wav');
+        this.load.audio('sfx_torpedo', './assets/fire.wav');
+        this.load.audio('theme', './assets/spacetheme.mp3');
         this.load.image('rocket', './assets/pow.png');
         this.load.image('wizard', './assets/wizardFight.png');
         this.load.image('slime', './assets/slime.png');
@@ -41,6 +41,7 @@ class Menu extends Phaser.Scene {
         };
 
         //Menu Text
+        this.add.text(game.config.width / 2, 160, 'Slime Invasion', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width / 2, 360, 'Press ENTER To Continue', menuConfig).setOrigin(0.5);
         menuConfig.fontSize = '22px';
         this.add.text(game.config.width/2, 390, 'Difficulty:', menuConfig).setOrigin(0.5);
@@ -70,7 +71,7 @@ class Menu extends Phaser.Scene {
         game.settings = {
           spaceshipSpeed: 2,
           gameTimer: 60000,
-          ammoCount: 2  
+          ammoCount: 20  
         }
     }
 
@@ -83,7 +84,7 @@ class Menu extends Phaser.Scene {
             game.settings = {
               spaceshipSpeed: 2.5,
               gameTimer: 60000,
-              ammoCount: 2 
+              ammoCount: 20 
             };
             this.difficultySettingHard.text = "hard";
             this.difficultySettingEasy.text = "EASY";

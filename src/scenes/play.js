@@ -19,8 +19,8 @@ class Play extends Phaser.Scene {
        this.load.image('tree', './assets/tree.png');
        this.load.image('trea', './assets/trea.png');
        this.load.image('trei', './assets/trei.png');
-       this.load.image('spark', './assets_custom/spark.png');
-       this.load.spritesheet('explosion', './assets_custom/explosion.png', {frameWidth: 100, frameHeight: 100, startFrame: 0, endFrame: 8});
+       this.load.image('spark', './assets/spark.png');
+       this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 100, frameHeight: 100, startFrame: 0, endFrame: 8});
     }
 
     create() {
