@@ -19,7 +19,6 @@ class Play extends Phaser.Scene {
        this.load.image('tree', './assets/tree.png');
        this.load.image('trea', './assets/trea.png');
        this.load.image('trei', './assets/trei.png');
-       this.load.image('spark', './assets/spark.png');
        this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 100, frameHeight: 100, startFrame: 0, endFrame: 8});
     }
 
@@ -82,7 +81,7 @@ class Play extends Phaser.Scene {
         this.timeCenter = this.add.text(borderUISize + borderPadding + 290, borderUISize + borderPadding * 2 + 17, this.timeLeft, this.statusConfig);
 
         this.statusConfig.fontSize = '20px'
-        this.ammoGain = this.add.text(-1000, -1000, '+0 TORPEDOES', this.statusConfig).setOrigin(0.5);
+        this.ammoGain = this.add.text(-1000, -1000, '+0 Fireballs', this.statusConfig).setOrigin(0.5);
 
         gameOver = false;
 
@@ -218,26 +217,12 @@ class Play extends Phaser.Scene {
 
     shipExplode(ship) {
         ship.alpha = 0;
-        let particle = this.add.particles('spark');
-        particle.createEmitter({
-            x: ship.x - 30,
-            y: ship.y,
-            angle: { min: 0, max: 360 },
-            speed: 5000,
-            accelerationX: -500,
-            accelerationY: -500,
-            gravityY: 100,
-            lifespan: { min: 10, max: 15},
-            blendMode: 'ADD'
-        });
-
         let boom = this.add.sprite(ship.x - 75, ship.y - 50, 'explosion').setOrigin(0, 0);
         boom.anims.play('explode');
         boom.on('animationcomplete', () => {
             ship.reset();
             ship.alpha = 1;
             boom.destroy();
-            particle.destroy();
             this.ammoGain.text = "";
         });
 

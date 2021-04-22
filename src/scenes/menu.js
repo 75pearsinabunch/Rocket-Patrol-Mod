@@ -8,8 +8,8 @@ class Menu extends Phaser.Scene {
         this.load.audio('sfx_select', './assets/select.wav');
         this.load.audio('toggle', './assets/toggle.wav');
         this.load.audio('sfx_explosion', './assets/explosion.wav');
-        this.load.audio('sfx_torpedo', './assets/fire.wav');
-        this.load.audio('theme', './assets/spacetheme.mp3');
+        this.load.audio('sfx_fireball', './assets/sfx_magic.wav');
+        this.load.audio('theme', './assets/gametheme.mp3');
         this.load.image('rocket', './assets/pow.png');
         this.load.image('wizard', './assets/wizardFight.png');
         this.load.image('slime', './assets/slime.png');
@@ -58,7 +58,7 @@ class Menu extends Phaser.Scene {
         menuConfig.fontSize = '16px';
         this.add.text(65, 35, 'HI-SCORE:', menuConfig).setOrigin(0.5);
         menuConfig.fontSize = '36px';
-        this.highScoreText = this.add.text(125, 35, highScore, menuConfig).setOrigin(0.5);
+        this.highScoreText = this.add.text(150, 35, highScore, menuConfig).setOrigin(0.5);
 
         //inputs setting
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
